@@ -1,0 +1,29 @@
+class Solution {
+    public int[] sortArrayByParity(int[] a) {
+        int i=0;
+        int j=a.length-1;
+        int t;
+        while(i<=j)
+        {
+            if(a[i]%2!=0&&a[j]%2==0)
+            {
+              t=a[i];
+              a[i]=a[j];
+              a[j]=t;
+            }
+            else if(a[i]%2==0&&a[j]%2==0)
+            {
+               i++;
+                continue;
+            }
+            else if(a[i]%2!=0&&a[j]%2!=0)
+            {
+               j--;
+                continue;
+            }
+            i++;
+            j--;
+        }
+        return a;
+    }
+}
